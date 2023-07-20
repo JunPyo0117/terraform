@@ -58,7 +58,7 @@ resource "aws_network_interface" "my_master_net" {
   security_groups = [aws_security_group.example-sg.id]
   private_ips = ["10.0.0.20"]
   tags = {
-    Name = "private_network_interface-01"
+    Name = "private_network_interface-master-01"
   }
 }
 
@@ -67,7 +67,7 @@ resource "aws_network_interface" "my_worker01_net" {
   security_groups = [aws_security_group.example2-sg.id]
   private_ips = ["10.0.0.21"]
   tags = {
-    Name = "private_network_interface-01"
+    Name = "private_network_interface-worker-01"
   }
 }
 
@@ -76,7 +76,7 @@ resource "aws_network_interface" "my_worker02_net" {
   security_groups = [aws_security_group.example2-sg.id]
   private_ips = ["10.0.0.22"]
   tags = {
-    Name = "private_network_interface-02"
+    Name = "private_network_interface-worker-02"
   }
 }
 
@@ -85,7 +85,7 @@ resource "aws_network_interface" "my_worker03_net" {
   security_groups = [aws_security_group.example2-sg.id]
   private_ips = ["10.0.0.23"]
   tags = {
-    Name = "private_network_interface-03"
+    Name = "private_network_interface-worker-03"
   }
 }
 
@@ -94,6 +94,6 @@ resource "aws_network_interface" "my_nfs_net" {
   security_groups = [aws_security_group.example3-sg.id]
   private_ips = ["10.0.0.24"]
   tags = {
-    Name = "private_network_interface-04"
+    Name = "private_network_interface-NFS"
   }
 }
