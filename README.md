@@ -85,4 +85,12 @@ data "terraform-remote-state" "vpc" {
 ```
 
 ## Terraform 기본 명령어
+- init: 테라폼 명령어 사용을 위해 설정 진행
+- plan: 테라폼으로 작성한 코드가 실제 어떻게 ㅁ나들어질지에 대한 예측 결과 보여줌, 문제가 없다해서 apply가 성공한다는 보장은 없음
+- apply: 테라폼 코드로 실제 인프라 생성
+- import: 이미 만들어진 자원을 테라폼 state 파일로 옮겨줌
+- state: 테라폼 state를 다루는 명령어
+- destroy: 생성된 자원을 모두 삭제
+
+  
 
