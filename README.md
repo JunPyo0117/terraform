@@ -15,10 +15,11 @@ IaC - Infrastructure as Code
 
 ### provider
 provider 안에서 다양한 Arguments를 가짐  
+key를 직접 올리는 것 보단 aws cli등에 로그인 후 사용 권장  
 ```
 provider "aws" {
-  access_key = "AWS ACCESS KEY"
-  secret_key = "AWS SECRET KEY" 
+  #access_key = "AWS ACCESS KEY"
+  #secret_key = "AWS SECRET KEY" 
   region = "ap-northeast-2"  # 원하는 리전으로 변경
 }
 ```
