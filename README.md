@@ -16,7 +16,7 @@ IaC - Infrastructure as Code
 ### provider
 provider 안에서 다양한 Arguments를 가짐  
 key를 직접 올리는 것 보단 aws cli등에 로그인 후 사용 권장  
-```
+```tf
 provider "aws" {
   #access_key = "AWS ACCESS KEY"
   #secret_key = "AWS SECRET KEY" 
@@ -26,7 +26,7 @@ provider "aws" {
 
 ### resource
 테라폼으로 VPC를 생성하는 코드  
-```
+```tf
 # AWS, vpc 설정
 resource "aws_vpc" "terraform-vpc" {
   cidr_block = "10.0.0.0/20"
@@ -45,7 +45,7 @@ state는 원격 저장소인 'backend'에도 저장될 수 있음
 ### output
 생성한 리소스 값들을 참조하여 변수를 state파일로 저장  
 remote를 사용하여 재사용 가능  
-```
+```tf
 # AWS, vpc 설정
 resource "aws_vpc" "terraform-vpc" {
   cidr_block = "10.0.0.0/20"
@@ -62,7 +62,7 @@ output "cidr_block" {
 
 ### module
 module은 한 번 만들어진 테라폼 코드로 같은 형태를 반복적으로 만들어낼때 주로 사용   
-```
+```tf
 # AWS, vpc 설정
 module "vpc" {
   source = "../_modules/vpc"
@@ -73,7 +73,7 @@ module "vpc" {
 ### remote
 remote는 원격 참조 개념
 remote state는 key 값에 명시한 state에서 변수를 가져옴
-```
+```tf
 data "terraform-remote-state" "vpc" {
    backend = "remote"
 
